@@ -17,15 +17,37 @@ import PlaygroundSupport
 // Create canvas
 let canvas = Canvas(width: 400, height: 300)
 
-/*:
- ## Add your code below
- 
- Be sure to write human-readable code.
- 
- Use whitespace and comments as appropriate.
- */
-// Replace this comment with your first comment – what is the goal of the code you're about to write?
+class Sketch : NSObject{
+// Canvas
+let canvas : Canvas
 
+//position of the circle
+    var x : Int
+
+//This function runs once
+override init() {
+    
+    //Create canvas object
+    let canvas = Canvas(width: 500, height: 500)
+    
+    //Set starting position
+    x = 250
+    }
+
+//Runs in a loop
+func draw() {
+    
+    //change position
+    x += 1
+    
+    //Draw the ellipses
+    canvas.drawEllipse(centreX: X, centreY: 450, width: 50, height: 50)
+    canvas.drawEllipse(centreX: X, centreY: 250, width: 50, height: 50)
+    canvas.drawEllipse(centreX: X, centreY: 50, width: 50, height: 50)
+    canvas.drawEllipse(centreX: 500-X, centreY: 350, width: 50, height: 50)
+    canvas.drawEllipse(centreX: 500-X, centreY: 150, width: 50, height: 50)
+}
+}
 
 
 /*:
