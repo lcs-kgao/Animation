@@ -24,7 +24,7 @@ class Sketch : NSObject{
         x += 1
         
         //Draw the ellipses
-     canvas.fillColor = Color.blue
+        canvas.fillColor = Color.blue
         canvas.drawEllipse(centreX: x, centreY: 450, width: 50, height: 50)
         canvas.fillColor = Color.purple
         canvas.drawEllipse(centreX: x, centreY: 250, width: 50, height: 50)
