@@ -1,34 +1,40 @@
 import Foundation
 
-class Sketch : NSObject {
-    
-    // NOTE: Every sketch must contain an object of type Canvas named 'canvas'
-    //       Therefore, the line immediately below must always be present.
+class Sketch : NSObject{
+    // Canvas
     let canvas : Canvas
     
-    // Position of circle
+    //position of the circle
     var x : Int
     
-    // This function runs once
+    //This function runs once
     override init() {
         
-        // Create canvas object – specify size
+        //Create canvas object
         canvas = Canvas(width: 500, height: 500)
         
-        // Set starting position
+        //Set starting position
         x = 250
-        
     }
     
-    // Runs in a loop, forever, to create the animated effect
+    //Runs in a loop
     func draw() {
         
-        // Change position
+        //change position
         x += 1
         
-        // Draw an ellipse in the middle of the canvas
+        //Draw the ellipses
+     canvas.fillColor = Color.blue
+        canvas.drawEllipse(centreX: x, centreY: 450, width: 50, height: 50)
+        canvas.fillColor = Color.purple
         canvas.drawEllipse(centreX: x, centreY: 250, width: 50, height: 50)
-        
+        canvas.fillColor = Color.black
+        canvas.drawEllipse(centreX: x, centreY: 50, width: 50, height: 50)
+        canvas.fillColor = Color.yellow
+        canvas.drawEllipse(centreX: 500-x, centreY: 350, width: 50, height: 50)
+        canvas.fillColor = Color.blue
+        canvas.drawEllipse(centreX: 500-x, centreY: 150, width: 50, height: 50)
+        canvas.fillColor = Color.green
     }
-    
 }
+
