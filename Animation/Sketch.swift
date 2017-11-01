@@ -19,15 +19,15 @@ class Sketch : NSObject {
         
         // Create canvas object – specify size
         canvas = Canvas(width: 500, height: 500)
-        canvas.drawShapesWithBorders = false
+       // canvas.drawShapesWithBorders = false
         
         // Set starting position
-        x = random(from: 10, toButNotIncluding: 100)
-        y = random(from: 60, toButNotIncluding: 300)
+        x = random(from: 40, toButNotIncluding: 60)
+        y = random(from: 250, toButNotIncluding: 350)
         
         //set the difference
-        dx = 1
-        dy = 1
+        dx = 2
+        dy = 2
         
         
     }
@@ -45,25 +45,26 @@ class Sketch : NSObject {
 
         
         if x > 450 {
-            dx = -1
+            dx = -2
         }
         
         if x < 50 {
-            dx = 1
+            dx = 2
         }
         
         if y > 450 {
-            dy = -1
+            dy = -2
         }
         
         if y < 50 {
-            dy = 1
+            dy = 2
         }
         
         // Draw an ellipse in the middle of the canvas
-        canvas.fillColor = Color.black
+        canvas.fillColor = Color.white
         canvas.borderColor = Color.black
-        canvas.drawEllipse(centreX: x, centreY: y, width: 100, height: 100, borderWidth: x)
+        canvas.drawEllipse(centreX: x, centreY: y, width: 100, height: 100, borderWidth: 3)
+        canvas.drawEllipse(centreX: x, centreY: y, width: 1, height: 1 , borderWidth: 1)
         
     }
     
