@@ -28,16 +28,18 @@ class Sketch : NSObject {
         // Change position
         x += 1
         
-        //Set a
+        
+        //Set A
         let a : Double = -1/25
+       
         
         //Set the equation
         y = Int(a*(Double(x)-50)*(Double(x)-50)+100)
-        
+         for k in stride(from: 0, to: 500, by: 100){
         
         // Draw an ellipse in the middle of the canvas
-        canvas.drawEllipse(centreX: x, centreY: y, width: 25, height: 25)
-        
+        canvas.drawEllipse(centreX: x, centreY: y+k, width: 10, height: 10)
+        }
     }
     
 }
