@@ -17,7 +17,8 @@ class Sketch : NSObject {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        x = 250
+        x = 0
+        y = 0
         
     }
     
@@ -27,8 +28,15 @@ class Sketch : NSObject {
         // Change position
         x += 1
         
+        //Set a
+        let a : Double = -1/25
+        
+        //Set the equation
+        y = Int(a*(Double(x)-50)*(Double(x)-50)+100)
+        
+        
         // Draw an ellipse in the middle of the canvas
-        canvas.drawEllipse(centreX: x, centreY: 250, width: 50, height: 50)
+        canvas.drawEllipse(centreX: x, centreY: y, width: 25, height: 25)
         
     }
     
