@@ -8,6 +8,7 @@ class Sketch : NSObject {
     
     // Position of circle
     var x : Int
+    var y : Int
     
     // This function runs once
     override init() {
