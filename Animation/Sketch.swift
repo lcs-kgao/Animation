@@ -95,9 +95,12 @@ class Sketch : NSObject {
         let sumofsquare = pow(Double(deltax), 2)+pow(Double(deltay), 2)
         let result = sqrt(Double(sumofsquare))
         
+        if result < 170{
         
+            canvas.lineColor = Color.red
+        canvas.drawLine(fromX: x1, fromY: y1, toX: x2, toY: y2)
         
-        
+        }
     }
     
 }
