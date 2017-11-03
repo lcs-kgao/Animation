@@ -45,6 +45,7 @@ class Sketch : NSObject {
     
         // Clear the background
         canvas.fillColor = Color.white
+        canvas.drawShapesWithFill = true
         canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: 0, width: canvas.width, height: canvas.height)
         
         // Change position
@@ -53,20 +54,20 @@ class Sketch : NSObject {
         x2 += dx2
         
 
-        
-        if x1 > 450 {
+        //Set the conditions
+        if x1 > 500 {
             dx1 = -1
         }
         
-        if x1 < 50 {
+        if x1 < 0 {
             dx1 = 1
         }
         
-        if y1 > 450 {
+        if y1 > 500 {
             dy1 = -1
         }
         
-        if y1 < 50 {
+        if y1 < 0 {
             dy1 = 1
         }
         
@@ -79,12 +80,23 @@ class Sketch : NSObject {
       
         
         // Draw an ellipse in the middle of the canvas
-        canvas.fillColor = Color.white
         canvas.borderColor = Color.black
-        canvas.drawEllipse(centreX: x1, centreY: y1, width: 100, height: 100, borderWidth: 3)
+        canvas.drawShapesWithFill = false
+        canvas.drawEllipse(centreX: x1, centreY: y1, width: 100, height: 100, borderWidth: 1)
         canvas.drawEllipse(centreX: x1, centreY: y1, width: 1, height: 1 , borderWidth: 1)
-        canvas.drawEllipse(centreX: x2, centreY: y2, width: 220, height: 220, borderWidth: 3)
+        canvas.drawEllipse(centreX: x2, centreY: y2, width: 220, height: 220, borderWidth: 1)
         canvas.drawEllipse(centreX: x2, centreY: y2, width: 1, height: 1, borderWidth: 1)
+        
+        //When the distance < 100, the line appears
+        //set dx
+        let deltax = x1-x2
+        let deltay = y1-y2
+        
+        let sumofsquare = pow(Double(deltax), 2)+pow(Double(deltay), 2)
+        let result = sqrt(Double(sumofsquare))
+        
+        
+        
         
     }
     
