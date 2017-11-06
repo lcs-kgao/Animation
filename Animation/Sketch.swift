@@ -15,6 +15,8 @@ class Sketch : NSObject {
     // Position of circle
     var x : Int
     var y : Int
+    var x2 : Int
+    var y2 : Int
     
     
     // This function runs once
@@ -26,6 +28,8 @@ class Sketch : NSObject {
         // Set starting position
         x = 0
         y = 0
+        x2 = 500
+        y2 = 500
         
         canvas.drawShapesWithBorders = false
     canvas.fillColor = Color.black
@@ -39,9 +43,7 @@ class Sketch : NSObject {
         
         // Change position
         x += 1
-        
-       // let a : Double = 100
-        //y = Int(a*(Double(x)-250)*(Double(x)-250)+500)
+        x2 -= 1
         
         // set the sin equation
         y = Int(100*sin(0.02631819699*Double(x)))
@@ -50,11 +52,12 @@ class Sketch : NSObject {
         for k in stride(from: 0, to: 500, by: 20){
             
         // Draw an ellipse
-            
-            for _ in stride(from: 20, to: 360, by: 20){
             canvas.fillColor = Color(hue: k, saturation: 100, brightness: 100, alpha: 100)
         canvas.drawEllipse(centreX: x, centreY: y+k, width: 5, height: 5)
-        }
+        canvas.drawEllipse(centreX: , centreY: , width: 5, height: 5)
+            
+            
+            
         }
     }
 }
