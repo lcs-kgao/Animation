@@ -27,6 +27,11 @@ class Sketch : NSObject {
         x = 0
         y = 0
         
+        canvas.drawShapesWithBorders = false
+    canvas.fillColor = Color.black
+        canvas.drawRectangle(centreX: 250, centreY: 250, width: 500, height: 500)
+        
+        
     }
     
     // Runs in a loop, forever, to create the animated effect
@@ -46,8 +51,8 @@ class Sketch : NSObject {
             
         // Draw an ellipse
             
-            for c in stride(from: 20, to: 360, by: 20){
-            //canvas.fillColor = Color(hue: c, saturation: 100, brightness: 100, alpha: 100)
+            for _ in stride(from: 20, to: 360, by: 20){
+            canvas.fillColor = Color(hue: k, saturation: 100, brightness: 100, alpha: 100)
         canvas.drawEllipse(centreX: x, centreY: y+k, width: 5, height: 5)
         }
         }
